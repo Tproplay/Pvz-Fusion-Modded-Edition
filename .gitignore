@@ -1,2 +1,33 @@
-**
-!.gitignore
+# Virtual environment
+.venv/
+
+# Archives
+*.zip
+
+# External tools & sub-repos
+dnSpy/
+
+# Visual Studio & Build artifacts
+.vs/
+**/bin/
+**/obj/
+*.user
+*.suo
+
+# Game binaries & large assets
+PvZ Fusion 4.0.5 Modded (Eng ver.)/*.exe
+PvZ Fusion 4.0.5 Modded (Eng ver.)/*.dll
+PvZ Fusion 4.0.5 Modded (Eng ver.)/PlantsVsZombiesRH_Data/
+PvZ Fusion 4.0.5 Modded (Eng ver.)/dotnet/
+PvZ Fusion 4.0.5 Modded (Eng ver.)/BepInEx/interop/
+PvZ Fusion 4.0.5 Modded (Eng ver.)/BepInEx/core/
+PvZ Fusion 4.0.5 Modded (Eng ver.)/BepInEx/plugins/
+PvZ Fusion 4.0.5 Modded (Eng ver.)/BepInEx/Mods - HengMing/
+PvZ Fusion 4.0.5 Modded (Eng ver.)/BepInEx/patchers/
+PvZ Fusion 4.0.5 Modded (Eng ver.)/BepInEx/cache/
+PvZ Fusion 4.0.5 Modded (Eng ver.)/BepInEx/unity-libs/
+PvZ Fusion 4.0.5 Modded (Eng ver.)/SkinLoader/
+
+# Logs and temp files
+*.log
+*.tmp
