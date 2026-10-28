@@ -62,3 +62,14 @@
   - `Mods - Ttpersik` (3 DLLs): Mods created by Ttpersik (`BigPortalGatling`, `SuperFireGatling`, `SuperObsidianGatling`).
   - `Mods - Tproplay` (2 DLLs): `Magnetar Client.dll` and `SimpleSpawner.Bepinex.dll`.
   - Kept critical shared framework libraries and resource folders at `BepInEx/plugins/` root: `CustomizeLib.BepInEx.dll`, `MengxiLib.BepInEx.dll`, `SkinLoader.dll`, `AudioImportLib.BepInEx.dll`, `AlmanacAdaptiveSliders.dll`, `Fusion.Android.Compatibility.dll`, `MemoryAOB.dll`, `DiscordRPC.dll`, `res/`, `skin/`, `MoreGloves/`, `MoreShovels/`, and translation folders.
+
+### 10. RHByteFiddler Patcher & MemoryAOB Placement Fix
+- **Error**: `RHByteFiddler警告: 未检测到以下必要文件: RHByteFiddler.dll` and `System.DllNotFoundException: Unable to load DLL 'MemoryAOB.dll'`.
+- **Root Cause**: `BepInEx/patchers/Patcher_RHByteFiddler.dll` explicitly checks for `BepInEx/plugins/RHByteFiddler.dll` at the root of `plugins/`. When grouped into a subfolder, the preloader check failed. In addition, `RHByteFiddler.dll` P/Invokes `MemoryAOB.dll`, which Windows resolves from the application root or plugins directory.
+- **Fix**:
+  - Restored `RHByteFiddler.dll` to `BepInEx/plugins/` root in both Packed and Testing builds.
+  - Placed `MemoryAOB.dll` in both `BepInEx/plugins/` and the game root directory.
+  - Placed `HengMingModsLib.dll` in `BepInEx/plugins/` root to satisfy `HengMingModsLib.Preloader.dll`.
+
+### 11. Magnetar Client Config Cleanup
+- Removed `Magnetar_Client.cfg`, `Magnetar_bangbay.json`, and `Magnetar_Default.json` from `BepInEx/config/` across both release (`Packed`) and testing builds.
