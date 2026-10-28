@@ -6,6 +6,7 @@
 
 # External tools & sub-repos
 dnSpy/
+BepInExInstall.exe
 
 # Visual Studio & Build artifacts
 .vs/
