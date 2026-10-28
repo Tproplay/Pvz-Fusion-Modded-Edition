@@ -1,42 +1,35 @@
 # Virtual environment
 .venv/
+__pycache__/
+*.py[cod]
+*$py.class
 
 # Archives
 *.zip
+*.7z
+*.tar.gz
+*.rar
 
-# External tools & sub-repos
+# Tools & installers
 dnSpy/
 BepInExInstall.exe
 
-# Visual Studio & Build artifacts
+# Visual Studio & build artifacts
 .vs/
 **/bin/
 **/obj/
 *.user
 *.suo
 
-# Build and release distribution
+# Build and release distributions
 dist/
 build_release/
 
-# Testing copy (untracked working copy for running & testing)
+# Game installations & builds (distributed via GitHub Releases & Google Drive)
+PvZ Fusion 4.0.5 Modded (Packed)/
 PvZ Fusion 4.0.5 Modded (Testing)/
 
-# Packed copy binaries & large assets
-PvZ Fusion 4.0.5 Modded (Packed)/*.exe
-PvZ Fusion 4.0.5 Modded (Packed)/*.dll
-PvZ Fusion 4.0.5 Modded (Packed)/PlantsVsZombiesRH_Data/
-PvZ Fusion 4.0.5 Modded (Packed)/dotnet/
-PvZ Fusion 4.0.5 Modded (Packed)/BepInEx/interop/
-PvZ Fusion 4.0.5 Modded (Packed)/BepInEx/core/
-PvZ Fusion 4.0.5 Modded (Packed)/BepInEx/plugins/
-PvZ Fusion 4.0.5 Modded (Packed)/BepInEx/Mods - HengMing/
-PvZ Fusion 4.0.5 Modded (Packed)/BepInEx/patchers/
-PvZ Fusion 4.0.5 Modded (Packed)/BepInEx/cache/
-PvZ Fusion 4.0.5 Modded (Packed)/BepInEx/unity-libs/
-PvZ Fusion 4.0.5 Modded (Packed)/SkinLoader/
-
-# Logs and temp files
+# Logs and temporary files
 *.log
 *.tmp
 scratch/
