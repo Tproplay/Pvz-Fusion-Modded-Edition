@@ -94,7 +94,11 @@
   - Re-routed non-HengMing DLLs (`RogueShooting-*`, `ShootingMODGeneralLib.dll`) to `Mods - Salmon` and `MagnetDoomBlover.dll`, `Menu.dll`, `StarUpDoomSniper.dll` to `Mods - Community`.
   - Reduced total package footprint below 2 GB (freed ~114 MB across both builds).
 - **BepInEx Performance Configuration**:
-  - `[Logging.Console] Enabled = false`: Disabled console window allocations and synchronous stdout piping to boost in-game frame rates.
   - `[Logging.Disk] InstantFlushing = false`: Disabled instant disk flushing during frame loops.
-  - `[IL2CPP] UpdateInteropAssemblies = false`: Skipped redundant xref/metadata re-generation on game startup, accelerating load time.
+
+### 14. Fixed Mod Loading Failure (`IOException: The handle is invalid`)
+- **Error**: Dozens of mods failed to load with `System.IO.IOException: The handle is invalid. at System.ConsolePal.SetConsoleOutputEncoding(Encoding enc) at System.Console.set_OutputEncoding(Encoding value)` during `Chainloader.LoadPlugin()`.
+- **Root Cause**: Many precompiled mod DLLs (`Patcher_RHByteFiddler`, `HengMingModsLib`, `ArmyCactus`, `BigFireGatling`, etc.) explicitly call `Console.OutputEncoding = Encoding.UTF8` during initialization. In .NET 6 (Windows GUI process), when `[Logging.Console] Enabled = false`, no console handle exists (`INVALID_HANDLE_VALUE`), causing `SetConsoleOutputCP` to throw an unhandled `IOException`, crashing mod initialization and breaking cascading dependencies (including Almanac plant menus).
+- **Fix**: Restored `[Logging.Console] Enabled = true` and `[IL2CPP] UpdateInteropAssemblies = true` in `BepInEx/config/BepInEx.cfg` across both `Packed` and `Testing` builds, providing valid handles and restoring proper plugin loading.
+
 
