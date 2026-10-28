@@ -86,17 +86,38 @@ This edition includes critical binary and configuration patches to ensure zero-c
 
 Releases are distributed through GitHub Releases and Google Drive:
 
+- **GitHub Release Page**: [Plants vs. Zombies Fusion Modded Edition v4.0.5](https://github.com/Tproplay/Pvz-Fusion-Modded-Edition/releases/tag/v4.0.5)
+- **Google Drive Release Mirror**: [Google Drive v4.0.5 Folder](https://drive.google.com/drive/folders/1UanI2jBlpPjW_sOuwN0sk-Rjg9fdUnM5?usp=sharing)
+
+### Packages:
+
 1. **Standalone Full Game (`PvZ_Fusion_4.0.5_Modded_Full_v4.0.5.zip`)**
    - Available on: **GitHub Releases** and **Google Drive**
    - Size: ~1.82 GB uncompressed
    - Ready to play immediately. Includes the full game engine, .NET 6 IL2CPP runtime, BepInEx 6, all 400+ mods, and configs.
+   - [Google Drive Direct Download](https://drive.google.com/file/d/1AAwrQ5clL-nkzmCiPBjZWRrWymhkvpnw/view?usp=sharing)
+   - [Google Drive Folder](https://drive.google.com/drive/folders/1cpAJlzO2BBXSU8YJv-_R8KNZdRfB4s9h?usp=sharing)
+
 2. **Mods and Framework Addon (`PvZ_Fusion_4.0.5_Mods_Only_v4.0.5.zip`)**
    - Available on: **GitHub Releases** and **Google Drive**
    - Size: ~1.32 GB uncompressed
    - For players who already have a clean copy of PvZ Fusion 4.0.5. Contains `BepInExInstall.exe`, custom `Il2CppInterop` binaries, all 400+ mods, configs, and skins.
+   - [Google Drive Direct Download](https://drive.google.com/file/d/1OYzv5slwjKCg9kF0bzTpiWiQO-ltttjq/view?usp=sharing)
+   - [Google Drive Folder](https://drive.google.com/drive/folders/1T0RUbhGofIbrw8J7LD_iftwQMc7j0IwO?usp=sharing)
+
 3. **Modular Multi-Part Packs**
    - Available on: **Google Drive ONLY**
-   - 9 individual archives (`Part00` through `Part08`) allowing selective downloads for slower internet connections or custom mod setups.
+   - 9 individual archives (`Part00` through `Part08`) allowing selective downloads for slower internet connections or custom mod setups:
+     - [Google Drive Modular Folder](https://drive.google.com/drive/folders/1k0t127VL0vKr2A92BcRK_5HL8XkF2Jvz?usp=sharing)
+     - [Part 00 - Prerequisites and Core](https://drive.google.com/file/d/136lw7RzBNXV7mRxglozCxYyRWDvaDgDb/view?usp=sharing)
+     - [Part 01 - Wuxuan Mengxi Pack](https://drive.google.com/file/d/1l-CiAqlUdJn_3_vdUDD3a5EPaimYo_Cc/view?usp=sharing)
+     - [Part 02 - Ultimate Plant Pack](https://drive.google.com/file/d/13X-55iWHtL4syfWCArPF9nzjHDxzBq_U/view?usp=sharing)
+     - [Part 03 - Inf75 Pack](https://drive.google.com/file/d/1lI0PCNsxCPdq7xNigLVSiUveOH9-XXzt/view?usp=sharing)
+     - [Part 04 - HengMing Pack](https://drive.google.com/file/d/1z8YzLMgTgpuis5WsMHUkkRiGtppT2tas/view?usp=sharing)
+     - [Part 05 - Salmon Pack](https://drive.google.com/file/d/1qgTo4jAF8dY3A4pKp7mZdIxHzG4JJiPj/view?usp=sharing)
+     - [Part 06 - Community Packs](https://drive.google.com/file/d/1uchVCD5_zPHeq9aAKUvBjykbzmXCBE-Y/view?usp=sharing)
+     - [Part 07 - Tproplay Tools](https://drive.google.com/file/d/1hvBgL8Vtc5j7O-mBxBwyskgNZIAlGhkI/view?usp=sharing)
+     - [Part 08 - Skin Packs](https://drive.google.com/file/d/1E7nt_IqIR1TVdQQpT996dYiNMrkl1kqQ/view?usp=sharing)
 
 ---
 
