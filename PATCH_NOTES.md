@@ -32,3 +32,33 @@
   - `SkinLoader/931/ObsidianWallNut`
   - `SkinLoader/939/UltimateGatlingBlover_1`
 - Removed duplicate `Compound+Z.dll` (identical hash to `Compound Z.dll`).
+
+### 7. Removed IllustrationPlacement Mod
+- Removed `BepInEx/plugins/IllustrationPlacement.dll` and its config `BepInEx/config/com.illustrationplacement.bepinex.cfg` from both `Packed` and `Testing` builds.
+
+### 8. Installed Magnetar Client & Simple Spawner
+- Downloaded `MagnetarClient-4.0.2-Bepinex.zip` from Google Drive (`19W-gSM7iMensOkqVbJdGm_crsCjbyv2X`).
+- Deployed Magnetar Client into both builds:
+  - `BepInEx/plugins/Mods - Tproplay/Magnetar Client.dll`
+  - `BepInEx/plugins/DiscordRPC.dll`
+  - `BepInEx/plugins/Magnetar Data/`
+  - `BepInEx/plugins/Magnetar Translation/`
+  - Verified `Newtonsoft.Json.dll` in `BepInEx/core/`.
+  - Configs: `Magnetar_Client.cfg`, `Magnetar_bangbay.json`, `Magnetar_Default.json`.
+- Deployed Simple Spawner:
+  - `BepInEx/plugins/Mods - Tproplay/SimpleSpawner.Bepinex.dll`
+  - Config: `BepInEx/config/com.tproplay.simplespawner.cfg` in both builds.
+
+### 9. Grouped Mods by Authors & Packs
+- Reorganized all 400+ plugin DLLs from a flat list into categorized author directories in both `Packed` and `Testing` builds:
+  - `Mods - Ultimate Plant Pack` (105 DLLs): Divine/cosmic fusion series (`AstralGodCabbage`, `BloodMoonPhantomCabbage`, `DisillusionmentLaserPumpkin`, `UltimateSaintSeiyaCabbage`, `UltimateNineGirls`, etc.).
+  - `Mods - Wuxuan Mengxi` (99 DLLs): Plant mods authored, co-authored, or adapted by 梧萱梦汐X (`BambooWoodMortar`, `BonkChoy2`, `ButterGloom`, `CherryFume`, `CoffeeBean`, etc.).
+  - `Mods - Inf75` (58 DLLs): Complete collection of `inf75.*` mods (`BigDoomGatling`, `SuperDiamondNut`, `SuperDoomSqualour`, `WaterPot`, etc.).
+  - `Mods - HengMing` (50 DLLs): Complete collection of HengMing's creations including `HengMingModsLib`, `StarUpDoomSniper`, `MagnetDoomBlover`, `Menu`, `ShootingMODGeneralLib`, and the `RogueShooting-*` series.
+  - `Mods - Salmon` (49 DLLs): Complete collection of `salmon.*` mods (`BetterSuperMachine`, `Puff*SuperGatling`, `UltimateDoomMinigun`, `UltimateWinterMelon`, etc.).
+  - `Mods - Community` (28 DLLs): Independent community mods (`Cassidy`, `Xingchen`, `Deqing`, `Soviet`, `EnchantingTable`, etc.).
+  - `Mods - Murong Guqing` (19 DLLs): Mods created by 慕容孤晴 (`SuperMachine*` nut series, etc.).
+  - `Mods - LikeFengzi` (10 DLLs): Mods created by 理科疯子 (`CherryHypnoGatlingBlover`, `HypnoDoomEmperor`, etc.).
+  - `Mods - Ttpersik` (3 DLLs): Mods created by Ttpersik (`BigPortalGatling`, `SuperFireGatling`, `SuperObsidianGatling`).
+  - `Mods - Tproplay` (2 DLLs): `Magnetar Client.dll` and `SimpleSpawner.Bepinex.dll`.
+  - Kept critical shared framework libraries and resource folders at `BepInEx/plugins/` root: `CustomizeLib.BepInEx.dll`, `MengxiLib.BepInEx.dll`, `SkinLoader.dll`, `AudioImportLib.BepInEx.dll`, `AlmanacAdaptiveSliders.dll`, `Fusion.Android.Compatibility.dll`, `MemoryAOB.dll`, `DiscordRPC.dll`, `res/`, `skin/`, `MoreGloves/`, `MoreShovels/`, and translation folders.

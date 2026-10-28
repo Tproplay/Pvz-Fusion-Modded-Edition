@@ -34,3 +34,4 @@ PvZ Fusion 4.0.5 Modded (Packed)/SkinLoader/
 # Logs and temp files
 *.log
 *.tmp
+scratch/
