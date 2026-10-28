@@ -15,6 +15,10 @@ BepInExInstall.exe
 *.user
 *.suo
 
+# Build and release distribution
+dist/
+build_release/
+
 # Testing copy (untracked working copy for running & testing)
 PvZ Fusion 4.0.5 Modded (Testing)/
 

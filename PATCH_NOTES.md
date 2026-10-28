@@ -101,4 +101,17 @@
 - **Root Cause**: Many precompiled mod DLLs (`Patcher_RHByteFiddler`, `HengMingModsLib`, `ArmyCactus`, `BigFireGatling`, etc.) explicitly call `Console.OutputEncoding = Encoding.UTF8` during initialization. In .NET 6 (Windows GUI process), when `[Logging.Console] Enabled = false`, no console handle exists (`INVALID_HANDLE_VALUE`), causing `SetConsoleOutputCP` to throw an unhandled `IOException`, crashing mod initialization and breaking cascading dependencies (including Almanac plant menus).
 - **Fix**: Restored `[Logging.Console] Enabled = true` and `[IL2CPP] UpdateInteropAssemblies = true` in `BepInEx/config/BepInEx.cfg` across both `Packed` and `Testing` builds, providing valid handles and restoring proper plugin loading.
 
+### 15. Release v4.0.5 Packaging & Distribution
+- **Release Information**:
+  - Title: `Plants vs. Zombies Fusion Modded Edition v4.0.5`
+  - Tag: `v4.0.5`
+- **Packages Created**:
+  1. `PvZ_Fusion_4.0.5_Modded_Full_v4.0.5.zip` (~1.82 GB): Standalone full game with zero setup required.
+  2. `PvZ_Fusion_4.0.5_Mods_Only_v4.0.5.zip` (~1.32 GB): Mods & framework addon containing `BepInExInstall.exe`, custom `Il2CppInterop.Common.dll` & `Il2CppInterop.Runtime.dll`, all 400+ mods, configs, and skins.
+  3. `Modular Multi-Part Packs` (9 standalone parts): Core framework, prerequisites, and individual author packs for bandwidth constraints.
+- **Distribution Destinations**:
+  - **GitHub Releases**: Full Game Standalone & Mods Only Addon packages uploaded.
+  - **Google Drive**: Organized under `Pvz Fusion Modded Edition/v4.0.5/` containing dedicated folders for Full Game, Mods Only, and all Modular Multi-Part packs.
+
+
 
