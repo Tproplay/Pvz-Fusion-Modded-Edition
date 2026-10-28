@@ -21,7 +21,7 @@
 - **Fix**: Injected `ab != null` null check into `MengxiLib.BepInEx.Extensions.TryGetAsset` via dnlib to gracefully return `false` on missing or unreadable asset bundles instead of crashing the coroutine.
 
 ### 5. Missing Dependency Resolution (`GodMaliang.dll`)
-- **Error**: `Could not load [神马良 1.0.0] because it has missing dependencies: com.pvzrh.launcher.ui`
+- **Error**: `Could not load [GodMaliang 1.0.0] because it has missing dependencies: com.pvzrh.launcher.ui`
 - **Fix**: Removed `GodMaliang.dll` since the external launcher UI dependency is not present in the distribution.
 
 ### 6. SkinLoader Asset & Mod De-duplication
@@ -52,19 +52,19 @@
 ### 9. Grouped Mods by Authors & Packs
 - Reorganized all 400+ plugin DLLs from a flat list into categorized author directories in both `Packed` and `Testing` builds:
   - `Mods - Ultimate Plant Pack` (105 DLLs): Divine/cosmic fusion series (`AstralGodCabbage`, `BloodMoonPhantomCabbage`, `DisillusionmentLaserPumpkin`, `UltimateSaintSeiyaCabbage`, `UltimateNineGirls`, etc.).
-  - `Mods - Wuxuan Mengxi` (99 DLLs): Plant mods authored, co-authored, or adapted by 梧萱梦汐X (`BambooWoodMortar`, `BonkChoy2`, `ButterGloom`, `CherryFume`, `CoffeeBean`, etc.).
+  - `Mods - Wuxuan Mengxi` (99 DLLs): Plant mods authored, co-authored, or adapted by Wuxuan Mengxi (`BambooWoodMortar`, `BonkChoy2`, `ButterGloom`, `CherryFume`, `CoffeeBean`, etc.).
   - `Mods - Inf75` (58 DLLs): Complete collection of `inf75.*` mods (`BigDoomGatling`, `SuperDiamondNut`, `SuperDoomSqualour`, `WaterPot`, etc.).
   - `Mods - HengMing` (50 DLLs): Complete collection of HengMing's creations including `HengMingModsLib`, `StarUpDoomSniper`, `MagnetDoomBlover`, `Menu`, `ShootingMODGeneralLib`, and the `RogueShooting-*` series.
   - `Mods - Salmon` (49 DLLs): Complete collection of `salmon.*` mods (`BetterSuperMachine`, `Puff*SuperGatling`, `UltimateDoomMinigun`, `UltimateWinterMelon`, etc.).
   - `Mods - Community` (28 DLLs): Independent community mods (`Cassidy`, `Xingchen`, `Deqing`, `Soviet`, `EnchantingTable`, etc.).
-  - `Mods - Murong Guqing` (19 DLLs): Mods created by 慕容孤晴 (`SuperMachine*` nut series, etc.).
-  - `Mods - LikeFengzi` (10 DLLs): Mods created by 理科疯子 (`CherryHypnoGatlingBlover`, `HypnoDoomEmperor`, etc.).
+  - `Mods - Murong Guqing` (19 DLLs): Mods created by Murong Guqing (`SuperMachine*` nut series, etc.).
+  - `Mods - LikeFengzi` (10 DLLs): Mods created by LikeFengzi (`CherryHypnoGatlingBlover`, `HypnoDoomEmperor`, etc.).
   - `Mods - Ttpersik` (3 DLLs): Mods created by Ttpersik (`BigPortalGatling`, `SuperFireGatling`, `SuperObsidianGatling`).
   - `Mods - Tproplay` (2 DLLs): `Magnetar Client.dll` and `SimpleSpawner.Bepinex.dll`.
   - Kept critical shared framework libraries and resource folders at `BepInEx/plugins/` root: `CustomizeLib.BepInEx.dll`, `MengxiLib.BepInEx.dll`, `SkinLoader.dll`, `AudioImportLib.BepInEx.dll`, `AlmanacAdaptiveSliders.dll`, `Fusion.Android.Compatibility.dll`, `MemoryAOB.dll`, `DiscordRPC.dll`, `res/`, `skin/`, `MoreGloves/`, `MoreShovels/`, and translation folders.
 
 ### 10. RHByteFiddler Patcher & MemoryAOB Placement Fix
-- **Error**: `RHByteFiddler警告: 未检测到以下必要文件: RHByteFiddler.dll` and `System.DllNotFoundException: Unable to load DLL 'MemoryAOB.dll'`.
+- **Error**: `RHByteFiddler Warning: Missing required file RHByteFiddler.dll` and `System.DllNotFoundException: Unable to load DLL 'MemoryAOB.dll'`.
 - **Root Cause**: `BepInEx/patchers/Patcher_RHByteFiddler.dll` explicitly checks for `BepInEx/plugins/RHByteFiddler.dll` at the root of `plugins/`. When grouped into a subfolder, the preloader check failed. In addition, `RHByteFiddler.dll` P/Invokes `MemoryAOB.dll`, which Windows resolves from the application root or plugins directory.
 - **Fix**:
   - Restored `RHByteFiddler.dll` to `BepInEx/plugins/` root in both Packed and Testing builds.
@@ -76,8 +76,8 @@
 
 ### 12. Suppressed HengMing Reminder UI & Side Sliding Menu
 - **Target UI Elements**:
-  - In-game sliding side menu ("Warm reminder from Heng Ming" / "创作者名单" with side tab `create make who`).
-  - Loading screen popup reminder ("恒暝的温馨提示").
+  - In-game sliding side menu ("Warm reminder from Heng Ming" / creator list with side tab `create make who`).
+  - Loading screen popup reminder ("Warm reminder from Heng Ming").
 - **Root Cause**:
   - `HengMingModsLib.dll` -> `HengMingModsLib.LoadUI.Widgets.KindReminderPostLoad::Build()` creates `KindReminderPostLoadCanvas`, sliding panel UI, button triggers, and a frame driver component (`KindReminderPostLoad/Driver`) that polled mouse position and transform lerping every frame.
   - `HengMingModsLib.LoadUI.Widgets.KindReminder::Build()` creates the loading screen reminder canvas and text.
