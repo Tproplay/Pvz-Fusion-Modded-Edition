@@ -73,3 +73,28 @@
 
 ### 11. Magnetar Client Config Cleanup
 - Removed `Magnetar_Client.cfg`, `Magnetar_bangbay.json`, and `Magnetar_Default.json` from `BepInEx/config/` across both release (`Packed`) and testing builds.
+
+### 12. Suppressed HengMing Reminder UI & Side Sliding Menu
+- **Target UI Elements**:
+  - In-game sliding side menu ("Warm reminder from Heng Ming" / "创作者名单" with side tab `create make who`).
+  - Loading screen popup reminder ("恒暝的温馨提示").
+- **Root Cause**:
+  - `HengMingModsLib.dll` -> `HengMingModsLib.LoadUI.Widgets.KindReminderPostLoad::Build()` creates `KindReminderPostLoadCanvas`, sliding panel UI, button triggers, and a frame driver component (`KindReminderPostLoad/Driver`) that polled mouse position and transform lerping every frame.
+  - `HengMingModsLib.LoadUI.Widgets.KindReminder::Build()` creates the loading screen reminder canvas and text.
+- **Fix**:
+  - Patched `HengMingModsLib.dll` in both `Packed` and `Testing` builds using `dnlib`:
+    - `KindReminderPostLoad::Build()`, `DriverTick()`, `Toggle()`, `ShowFromSide()`, and `HideToSide()` bodies replaced with single `ret` instructions.
+    - `KindReminder::Build()` and `Tick()` bodies replaced with single `ret` instructions.
+  - Completely eliminates creation of the side panel, tab button, and their per-frame CPU tick overhead without breaking mod loading.
+
+### 13. Mod Pack Size & Performance Optimization
+- **Duplicate HengMing Binaries Cleaned**:
+  - `BepInEx/plugins/Mods - HengMing` contained full 54 MB copies of the 36 HengMing plant DLLs that were already present in `BepInEx/Mods - HengMing`.
+  - Converted `BepInEx/plugins/Mods - HengMing` DLLs to 0-byte placeholders as designed by `HengMingModsLib.Preloader.SyncPlaceholderDlls`.
+  - Re-routed non-HengMing DLLs (`RogueShooting-*`, `ShootingMODGeneralLib.dll`) to `Mods - Salmon` and `MagnetDoomBlover.dll`, `Menu.dll`, `StarUpDoomSniper.dll` to `Mods - Community`.
+  - Reduced total package footprint below 2 GB (freed ~114 MB across both builds).
+- **BepInEx Performance Configuration**:
+  - `[Logging.Console] Enabled = false`: Disabled console window allocations and synchronous stdout piping to boost in-game frame rates.
+  - `[Logging.Disk] InstantFlushing = false`: Disabled instant disk flushing during frame loops.
+  - `[IL2CPP] UpdateInteropAssemblies = false`: Skipped redundant xref/metadata re-generation on game startup, accelerating load time.
+
