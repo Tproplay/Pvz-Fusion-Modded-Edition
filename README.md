@@ -163,7 +163,7 @@ Use this option if you already have a clean installation of PvZ Fusion 4.0.5:
   - **Tproplay**: Crash fixes (CustomizeLib property set crash fix, MengxiLib coroutine null check fix, BepInEx console encoding handle fix, HengMing reminder suppressor, memory patcher alignment), build verification, packaging, and distribution.
   - **❣✰𝓛𝓾𝓷𝓪✰❣**: Downloaded and collected all 400+ community fusion mods.
 - **Original Game**: PopCap Games / EA
-- **PvZ Fusion Original Creator**: Lan Pao Pao (Blue Pao Pao)
+- **PvZ Fusion Original Creator**: Lan Pao Pao (Bluefly)
 - **Mod Authors & Contributors**:
   - Ultimate Plant Pack Team
   - Wuxuan Mengxi
