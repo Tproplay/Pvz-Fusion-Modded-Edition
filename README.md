@@ -159,6 +159,9 @@ Use this option if you already have a clean installation of PvZ Fusion 4.0.5:
 
 ## Credits and Author Attributions
 
+- **Modpack Maintenance & Fixes**:
+  - **Tproplay**: Crash fixes (CustomizeLib property set crash fix, MengxiLib coroutine null check fix, BepInEx console encoding handle fix, HengMing reminder suppressor, memory patcher alignment), build verification, packaging, and distribution.
+  - **❣✰𝓛𝓾𝓷𝓪✰❣**: Downloaded and collected all 400+ community fusion mods.
 - **Original Game**: PopCap Games / EA
 - **PvZ Fusion Original Creator**: Lan Pao Pao (Blue Pao Pao)
 - **Mod Authors & Contributors**:
@@ -183,4 +186,3 @@ Use this option if you already have a clean installation of PvZ Fusion 4.0.5:
 ## Documentation
 
 - Detailed technical changes, bugfix breakdowns, and history: see [PATCH_NOTES.md](PATCH_NOTES.md).
-- Release packaging and distribution specifications: see [RELEASE_PLAN.md](RELEASE_PLAN.md).

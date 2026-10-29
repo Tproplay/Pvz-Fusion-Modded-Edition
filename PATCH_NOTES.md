@@ -113,5 +113,10 @@
   - **GitHub Releases**: Full Game Standalone & Mods Only Addon packages uploaded.
   - **Google Drive**: Organized under `Pvz Fusion Modded Edition/v4.0.5/` containing dedicated folders for Full Game, Mods Only, and all Modular Multi-Part packs.
 
+### 16. Credits and Contributions
+- **Tproplay**: Crash fixes (CustomizeLib property set crash fix, MengxiLib coroutine null-check fix, BepInEx console encoding handle fix, HengMing reminder suppressor, memory patcher alignment), build verification, packaging, and distribution.
+- **❣✰𝓛𝓾𝓷𝓪✰❣**: Downloaded and collected all 400+ community fusion mods.
+
+
 
 
